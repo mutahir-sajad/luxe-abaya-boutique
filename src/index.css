@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+
+  --color-primary: #ecb613;
+  --color-bg-dark: #181611;
+  --color-glass: rgba(39, 36, 28, 0.7);
+}
+
+@layer utilities {
+  .glassmorphism {
+    background: rgba(39, 36, 28, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(236, 182, 19, 0.1);
+  }
+
+  .hero-gradient {
+    background: radial-gradient(circle at 50% 50%, #27241c 0%, #181611 100%);
+  }
+
+  .floating-shape {
+    filter: blur(80px);
+    z-index: 0;
+  }
+}
+
+body {
+  @apply bg-bg-dark font-sans text-slate-100 selection:bg-primary/30 overflow-x-hidden;
+}
